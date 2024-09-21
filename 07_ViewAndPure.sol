@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.27;
 
+/*
+    当 view 和 pure 函数被外部调用时，是不会消耗 gas 的
+    但是如果被合约调用，例如某个消耗gas的函数调用了 view 函数，那么就会消耗 gas
+*/
 contract ViewAdnPure {
     uint public num = 10;
 
